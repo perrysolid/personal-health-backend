@@ -41,6 +41,7 @@ if FASTAPI_AVAILABLE:
     from routes.fitness import router as fitness_router
     from routes.health import router as health_router
     from routes.social import router as social_router
+    from routes.wellness import router as wellness_router
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
@@ -83,7 +84,7 @@ if FASTAPI_AVAILABLE:
     app.include_router(fitness_router)
     app.include_router(athletes_router)
     app.include_router(social_router)
-    # Future: app.include_router(wellness_router)
+    app.include_router(wellness_router)
     # Future: app.include_router(nutrition_router)
 
 
